@@ -1,0 +1,119 @@
+.box__img{
+    width: 300px;
+    height: 250px;
+}
+.dataInput{
+    height: 40px;
+}
+/*.row{*/
+/*    display: flex;*/
+/*    flex-wrap: wrap;*/
+/*    margin: 0 -15px;*/
+/*}*/
+/*.col-3{*/
+/*    width: 20%;*/
+/*    padding: 0 15px;*/
+/*    box-sizing: border-box;*/
+/*}*/
+
+.grid{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+}
+.closeModal{
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 30px;
+}
+.projects-modal{
+    position: relative;
+    color: #48036F;
+    font-size: 18px;
+}
+.dataInputs{
+    display: flex;
+    margin: 10px;
+    justify-content: space-between;
+
+
+}
+.startDateInput{
+display: flex;
+    flex-direction:column ;
+    margin-right: 10px;
+    width: 50%;
+}
+.finishDateInput{
+display: flex;
+    flex-direction:column ;
+    width: 50%;
+}
+.titleInput{
+    width: 100%;
+    height: 40px;
+
+}
+.author{
+    width: 100%;
+    height: 40px;
+    margin-left: 10px;
+}
+.field__wrapper {
+    width: 50%;
+    position: relative;
+    margin: 15px 0;
+    text-align: center;
+}
+
+
+.fileInput{
+    background-color: #48036F;
+    color: white;
+    padding: 10px;
+    text-align: center;
+
+}
+.saveBtn{
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    background-color: #27043b;
+    color: white;
+    display: block;
+    margin-left:  auto;
+    transition: 1s;
+}
+.saveBtn:hover{
+    background-color: #650e97;
+
+}
+.projects-title{
+    margin-top: 20px;
+}
+.projects-title h1{
+color: blueviolet;
+    margin-bottom: 30px;
+}
+
+.btn{
+    border: none;
+    padding: 10px 15px;
+
+    background-color: blueviolet;
+    color: white;
+    display: block;
+    margin-left:  auto;
+    transition: 1s;
+    margin-bottom: 10px;
+}
+.btn:hover{
+    background-color: rgba(138, 43, 226, 0.66);
+    color: black;
+}
+.date-projects{
+    margin: 10px 0 10px 0;
+}

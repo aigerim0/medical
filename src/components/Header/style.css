@@ -1,0 +1,11 @@
+.header{
+    background: rgba(0, 0, 0, 0.05);
+    padding: 10px;
+    display: flex;
+    justify-content: right;
+}
+.header__img{
+    height: 30px ;
+    width: 30px;border-radius: 50%;
+
+}
