@@ -117,3 +117,23 @@ color: blueviolet;
 .date-projects{
     margin: 10px 0 10px 0;
 }
+.grid-btn{
+    display: flex;
+    justify-content: right;
+}
+.btn-grid{
+    border: none;
+    background: none;
+    color: blueviolet;
+    font-size: 25px;
+    transition: 1s;
+    margin-bottom: 10px;
+}
+.btn-list{
+    border: none;
+    background: none;
+    color: blueviolet;
+font-size: 30px;
+    transition: 1s;
+    margin-bottom: 10px;
+}

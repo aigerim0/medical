@@ -49,11 +49,15 @@ const Projects = () => {
     return (
         <div>
             <div className='projects-title'>
-                <h1 >ПРОЕКТЫ</h1>
+                <h1>ПРОЕКТЫ</h1>
                 <h3>СПИСОК ПРОЕКТОВ</h3>
             </div>
             <div>
                 <button onClick={() => setIsOpen(true)} className='btn'>Добавить проект</button>
+            <div className='grid-btn'>
+                <button className='btn-grid' ><i className='bx bx-grid-alt'></i></button>
+                <button  className='btn-list'><i className='bx bx-list-ul'></i></button>
+            </div>
                 <div className='grid'>
                     {
                         gallery.map(item =>
@@ -62,7 +66,8 @@ const Projects = () => {
                                     <img className='box__img' src={item.image}/>
                                     <h3 className='box__title'>{item.title}</h3>
                                     <div className='date-projects'>
-                                        <i className='bx bxs-calendar'></i> <span>{item.startDate}</span>-<span>{item.finishDate}</span>
+                                        <i className='bx bxs-calendar'></i>
+                                        <span>{item.startDate}</span>-<span>{item.finishDate}</span>
                                     </div>
                                     <h4 className='box__author'><i className='bx bxs-user'></i> {item.author}</h4>
                                 </div>
@@ -75,64 +80,49 @@ const Projects = () => {
                 isOpen={modalIsOpen}
                 onRequestClose={closeModal}
                 style={customStyles}
-                contentLabel="Example Modal"
-            >
-
+                contentLabel="Example Modal">
                 <button className='closeModal' onClick={closeModal}>×</button>
 
                 <form className='projects-modal' onSubmit={handleSubmit(onSubmit)}>
-                    <div className='dataInputs'>
-                       <div className='startDateInput'>
-                           <label htmlFor='startDate'> Даты начала проекта</label>
-                           <input id='startDate' className='dataInput' type='date'
-                                  {...register('startDate', {required: true})}
-                           />
-                       </div>
-                      <div className='finishDateInput'>
-                          <label htmlFor='finishDate'> Даты окончания проекта</label>
-                          <input id='finishDate'  className='dataInput' type='date'
-                                 {...register('finishDate', {required: true})}
-                          />
-                      </div>
+                    <div className="mb-3">
+                        <label className="form-label" htmlFor='startDate'> Даты начала проекта</label>
+                        <input className="form-control" id='startDate' type='date'
+                               {...register('startDate', {required: true})}
+                        />
+
                     </div>
-                    <div>
-                     <div>
-                        <div className='dataInputs'>
-                           <div>
-                               <label htmlFor='title'>Название проекта</label>
-                               <input id='title' className='titleInput ' type='text'
-                                      {...register('title', {required: true})}
-                               />
-                           </div>
-                          <div>
-                              <label htmlFor='author'>Автор проекта</label>
-                              <input id='author' className='author' type='text'
-                                     {...register('author', {required: true})}
-                              />
-                          </div>
-                        </div>
-                     </div>
+                    <div className="mb-3">
+
+                        <label className="form-label" htmlFor='finishDate'> Даты окончания проекта</label>
+                        <input id='finishDate' className="form-control" type='date'
+                               {...register('finishDate', {required: true})}
+                        />
+
                     </div>
-                    <div  className="field__wrapper">
+                    <div className="mb-3">
+                        <label className="form-label" htmlFor='title'>Название проекта</label>
+                        <input id='title' className="form-control" type='text'
+                               {...register('title', {required: true})}
+                        />
+
+                    </div>
+                    <div className="mb-3">
+                        <label className="form-label" htmlFor='author'>Автор проекта</label>
+                        <input className="form-control" id='author' type='text'
+                               {...register('author', {required: true})}
+                        />
+
+                    </div>
+                    <div className="mb-3">
                         <input type='file'
                                {...register('image', {required: true})}
                                onChange={handleChange}
-className='fileInput'
+                               className="form-control"
                         />
+
                     </div>
-                    <button className='saveBtn'>Добавить проект</button>
+                    <button className="btn btn-primary">Добавить проект</button>
                 </form>
-                {/*<div className="field__wrapper">*/}
-
-                {/*    <input name="file" type="file" name="file" id="field__file-2" className="field field__file"*/}
-                {/*           multiple/>*/}
-
-                {/*        <label className="field__file-wrapper" htmlFor="field__file-2">*/}
-                {/*            <div className="field__file-fake">Файл не вбран</div>*/}
-                {/*            <div className="field__file-button">Выбрать</div>*/}
-                {/*        </label>*/}
-
-                {/*</div>*/}
             </Modal>
         </div>
     );
