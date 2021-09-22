@@ -9,6 +9,7 @@ const Projects = () => {
     const [modalIsOpen, setIsOpen] = React.useState(false)
     const [gallery, setGallery] = useState([])
     const [image, setImage] = useState({})
+    const [cName, setClassName] = useState('grid');
     const onSubmit = (data) => {
         data.image = image.url
         axios.post('https://613b7037110e000017a45616.mockapi.io/api/gallery', data)
@@ -55,10 +56,10 @@ const Projects = () => {
             <div>
                 <button onClick={() => setIsOpen(true)} className='btn'>Добавить проект</button>
             <div className='grid-btn'>
-                <button className='btn-grid' ><i className='bx bx-grid-alt'></i></button>
-                <button  className='btn-list'><i className='bx bx-list-ul'></i></button>
+                <button onClick={()=> setClassName("grid")} className='btn-grid' ><i className='bx bx-grid-alt'></i></button>
+                <button onClick={() => setClassName("d-block")} className='btn-list'><i className='bx bx-list-ul'></i></button>
             </div>
-                <div className='grid'>
+                <div className={"grid project-boxes "+cName } >
                     {
                         gallery.map(item =>
                             <div key={item.id} className=''>
